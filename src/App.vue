@@ -1,26 +1,42 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+   
+    <!--  BEGIN NAVBAR  -->
+    <navbar />
+    <!--  END NAVBAR  -->
+
+    <!--  BEGIN MAIN CONTAINER  -->
+    <div class="main-container sidebar-closed sbar-open" id="container">
+
+        <div class="overlay"></div>
+        <div class="cs-overlay"></div>
+        <div class="search-overlay"></div>
+
+        <!--  BEGIN SIDEBAR  -->
+        <sidebar />
+        <!--  END SIDEBAR  -->
+        
+        <!--  BEGIN CONTENT AREA  -->
+        <router-view></router-view>
+        
+        <!--  END CONTENT AREA  -->
+    </div>
+    <!-- END MAIN CONTAINER -->
+  
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import navbar from './components/navbar.vue'
+import sidebar from './components/sidebar.vue'
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+  components: { 
+        navbar, 
+        sidebar
+    },
+
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped>
+
 </style>
